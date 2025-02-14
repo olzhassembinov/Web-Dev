@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ToDo List</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="top-bar">
+        <h1>ToDo List</h1>
+    </div>
+    <div class="container">
+        <h1>ToDo List</h1>
+        <div class="input-container">
+            <input type="text" id="taskInput" placeholder="New Task">
+            <button onclick="addTask()">Add</button>
+        </div>
+        <ul id="taskList"></ul>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
+
+body {
+    font-family: Arial, sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+.top-bar {
+    position: absolute;
+    top: 0;
+
+    width: 100%;
+
+    align-items: center;
+
+    background-color: rgb(39, 39, 39);
+    color: rgb(134, 132, 125);
+}
+
+.container {
+    width: 700px;
+    height: 700px;
+    background: gray;
+    padding: 20px;
+}
+
+.input-container {
+    width: 80%;
+    display: flex;
+    margin-bottom: 20px;
+}
+
+input {
+    flex: 1;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+
+button {
+    padding: 10px;
+    border: none;
+    background-color: #007BFF;
+    color: white;
+    cursor: pointer;
+    margin-left: 5px;
+    border-radius: 4px;
+}
+
+button:hover {
+    background-color: #0056b3;
+}
+
+ul {
+    list-style: none;
+    padding: 0;
+}
+
+li {
+    background: #fff;
+    padding: 0px;
+    margin: 5px 0;
+    border-radius: 4px;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
+}
+
+.task-container {
+    display: flex;
+    align-items: center;
+    flex-grow: 1; /* Ensures text stays aligned */
+}
+
+.checkbox {
+    margin-right: 0px; /* Space between checkbox and text */
+    transform: scale(1.2); /* Makes checkbox slightly larger */
+    cursor: pointer;
+}
+
+.task-text {
+    flex: 1; /* Allows text to take up remaining space */
+    margin-left: 5px;
+    font-size: 16px;
+}
+
+.completed {
+    text-decoration: line-through;
+    color: gray;
+}
+
+.delete-btn {
+    background: none;
+    border: none;
+    color: red;
+    cursor: pointer;
+    font-size: 16px;
+}
+
