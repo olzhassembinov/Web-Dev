@@ -1,10 +1,12 @@
+import { CommonModule } from '@angular/common';
 import { Component } from '@angular/core';
 
 @Component({
   selector: 'app-home-list',
   standalone: true,
   templateUrl: './home-list.component.html',
-  styleUrls: ['./home-list.component.css']
+  styleUrls: ['./home-list.component.css'],
+  imports: [CommonModule]
 })
 export class HomeListComponent {
   homes = [

@@ -3,6 +3,7 @@ document.addEventListener("DOMContentLoaded", function () {
 });
 
 function addTask() {
+    addHistory("was added")
     let taskInput = document.getElementById("taskInput");
     let taskText = taskInput.value.trim();
 
@@ -23,6 +24,13 @@ function addTask() {
     saveTasks();
 
     taskInput.value = "";
+}
+
+function addHistory(text) {
+    // createElement("li")
+    // getElementById
+    // .appendChild(li)
+
 }
 
 function toggleTask(checkbox) {

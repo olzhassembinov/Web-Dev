@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { CommonModule } from '@angular/common';
 
 interface Product {
   image: string;
@@ -11,7 +12,8 @@ interface Product {
 @Component({
   selector: 'app-products',
   templateUrl: './products.component.html',
-  styleUrls: ['./products.component.css']
+  styleUrls: ['./products.component.css'],
+  imports: [CommonModule]
 })
 export class ProductsComponent {
   products: Product[] = [
