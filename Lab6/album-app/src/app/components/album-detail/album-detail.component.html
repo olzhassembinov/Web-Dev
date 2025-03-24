@@ -1,0 +1,15 @@
+<div class="container mt-5" *ngIf="album">
+    <h1>Album Details</h1>
+    <div class="mb-3">
+      <label for="albumTitle" class="form-label">Album Title</label>
+      <input
+        type="text"
+        id="albumTitle"
+        [(ngModel)]="newTitle"
+        class="form-control"
+      />
+    </div>
+    <button class="btn btn-primary me-2" (click)="saveTitle()">Save</button>
+    <button class="btn btn-secondary me-2" (click)="goBack()">Return</button>
+    <a [routerLink]="['/albums', album.id, 'photos']" class="btn btn-info">Photos</a>
+</div>
