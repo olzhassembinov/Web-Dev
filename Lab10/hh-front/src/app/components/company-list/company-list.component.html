@@ -1,0 +1,30 @@
+<h2>Companies</h2>
+<div *ngIf="loadingCompanies">Loading companies...</div>
+<div *ngIf="companyError" class="error">{{ companyError }}</div>
+
+<ul *ngIf="!loadingCompanies && companies.length > 0">
+  <li *ngFor="let company of companies" (click)="onSelectCompany(company.id)">
+    <strong>{{ company.name }}</strong> - {{ company.city }}
+  </li>
+</ul>
+
+<div *ngIf="!loadingCompanies && companies.length === 0">
+  No companies found.
+</div>
+
+<div *ngIf="selectedCompanyId">
+  <h3>Vacancies</h3>
+
+  <div *ngIf="loadingVacancies">Loading vacancies...</div>
+  <div *ngIf="vacancyError" class="error">{{ vacancyError }}</div>
+
+  <ul *ngIf="!loadingVacancies && vacancies.length > 0">
+    <li *ngFor="let vacancy of vacancies">
+      {{ vacancy.name }} - ${{ vacancy.salary }}
+    </li>
+  </ul>
+
+  <div *ngIf="!loadingVacancies && vacancies.length === 0">
+    No vacancies found for this company.
+  </div>
+</div>
