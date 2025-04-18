@@ -6,16 +6,12 @@ class CompanySerializer(serializers.ModelSerializer):
         model = Company
         fields = '__all__'
 
-class VacancySerializer(serializers.ModelSerializer):
-    class Meta:
-        model = Vacancy
-        fields = ['id', 'name', 'description', 'salary']
-    
+class VacancySerializer(serializers.Serializer):
     id = serializers.IntegerField(read_only=True)
-    name = serializers.CharField(max_length=255)
+    name = serializers.CharField()
     description = serializers.CharField()
     salary = serializers.FloatField()
-    company = serializers.IntegerField()
+    company = serializers.CharField()
     
     def create(self, validated_data):
         return Vacancy.objects.create(**validated_data)
@@ -27,6 +23,3 @@ class VacancySerializer(serializers.ModelSerializer):
         instance.company = validated_data.get('company', instance.company)
         instance.save()
         return instance
-    
-    
-    
